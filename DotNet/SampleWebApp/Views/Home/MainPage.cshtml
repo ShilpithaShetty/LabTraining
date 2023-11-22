@@ -1,0 +1,35 @@
+﻿<h1>This is my main page</h1>
+</hr>
+<h3>What is Razor? </h3>
+<h4>AnyLanguage + HTML, specific to us C#</h4>
+</hr>
+<h5>To add C# code to html use "at" and "at{}"</h5>
+</hr>
+@{
+    var msg = "Hello Razor";
+}
+<input type="text" value = @msg/>
+<br/>
+<button onclick = "alert('Ok')">Ok</button>
+<span style="background-color:green; color:yellow">@ViewBag.ReturnValue</span>
+<hr/>
+@{
+    List<string> names = new List<string>();
+    names.Add("Aaron");
+    names.Add("Rose");
+    names.Add("Lily");
+}
+
+<table>
+    <tr>
+        <td>Name</td>
+    </tr>
+
+
+@foreach(var name in names)
+{
+    <tr><td>
+    @Html.TextBoxFor(n=>name)
+    </td></tr>
+}
+</table>
